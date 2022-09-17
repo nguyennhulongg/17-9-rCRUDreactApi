@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import productApi from './api/productApi';
 import './App.css';
+import Header from './components/Header';
+
 
 function App() {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    const fetchProductList = async () => {
+      try {
+        const response = await productApi.getAll();
+        setProductList(response);
+      } catch(errors) {
+        console.log(errors);
+      }
+    }
+
+    fetchProductList();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='nav-bar'>
+        <h1>amezon</h1>
+      </div>
+      <Header productList = {productList}/>
     </div>
   );
 }
