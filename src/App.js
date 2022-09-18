@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import productApi from './api/productApi';
 import './App.css';
+import AddProduct from './components/AddProduct';
 import Header from './components/Header';
 
 
@@ -19,7 +20,7 @@ function App() {
     }
 
     fetchProductList();
-  }, []);
+  });
 
   return (
     <div className="App">

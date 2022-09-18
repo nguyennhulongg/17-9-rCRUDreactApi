@@ -5,9 +5,9 @@ const productApi = {
     const url = "https://js-post-api.herokuapp.com/api/products";
     return axiosClient.get(url, { params })
   },
-  get: (id) => {
+  delete: (id) => {
     const url = `https://js-post-api.herokuapp.com/api/products/${id}`;
-    return axiosClient.get(url)
+    return axiosClient.delete(url)
   }, 
 }
 

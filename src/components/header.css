@@ -1,6 +1,7 @@
 header {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .products {
@@ -16,6 +17,17 @@ header {
   box-shadow: 0 0 2px black;
   margin-bottom: 50px;
   width: 165px;
+}
+
+.product-list i {
+  color: white;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.649);
+  border-radius: 30%;
+  margin: 3px 0 0 3px;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .product-name {
@@ -48,4 +60,5 @@ header {
   height: 220px;
   width: 165px;
   object-fit: cover;
+  position: relative;
 }
