@@ -20,14 +20,15 @@ function App() {
     }
 
     fetchProductList();
-  });
+  }, []);
 
   return (
     <div className="App">
       <div className='nav-bar'>
         <h1>amezon</h1>
       </div>
-      <Header productList = {productList}/>
+      <AddProduct productList={productList} setProductList= { setProductList }/>
+      <Header productList = {productList} setProductList= { setProductList }/>
     </div>
   );
 }

@@ -4,12 +4,22 @@ import './header.css'
 
 
 const Header = (props) => {
-  const {productList} = props
+  const {productList, setProductList} = props
 
 
   const handleDelete = async (id) => {
     try {
       await productApi.delete(id)
+      const fetchProductList = async () => {
+        try {
+          const response = await productApi.getAll();
+          setProductList(response);
+        } catch(errors) {
+          console.log(errors);
+        }
+      }
+  
+      fetchProductList();
     } catch (errors){
       console.log(errors);
     }
@@ -22,9 +32,7 @@ const Header = (props) => {
           return ( 
             <div key={product.id} className="product-list">
               <i onClick={() => handleDelete(product.id)} className="fa-solid fa-x"></i>
-              <img 
-                className="product-img" 
-                src= {product.images[0]} alt="" />
+              
               <p className="product-name">{product.name}</p>
               <div className="price">
                 <p className='origin-price'>{product.originalPrice}</p>
