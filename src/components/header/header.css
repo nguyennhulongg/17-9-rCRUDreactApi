@@ -1,0 +1,62 @@
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.friends {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 130px;
+  padding: 30px 0;
+  justify-content: center;
+  background-color: white;
+}
+
+.friend-list {
+  border-radius: 3px;
+  margin: 0 26px;
+  margin-bottom: 50px;
+  width: 160px;
+  background-color: rgba(0, 0, 0, 0.223);
+  box-shadow: 0 0 6px black;
+}
+
+.friend-list i {
+  color: white;
+  padding: 5px 6.5px;
+  background-color: rgba(0, 0, 0, 0.36);
+  border-radius: 30px;
+  margin: 3px 0 0 3px;
+  cursor: pointer;
+}
+
+.feature {
+  z-index: 1;
+  position: absolute;
+}
+
+.friend-name {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #444444;
+}
+
+.friend-img {
+  height: 200px;
+  width: 160px;
+  object-fit: cover;
+  position: relative;
+}
+
+.change-name input {
+  width: 160px;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+}

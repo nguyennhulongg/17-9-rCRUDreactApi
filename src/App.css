@@ -9,15 +9,20 @@
 
 body {
   min-width: 100vh;
+  background-color: #f2f2f2;
 }
 
 .nav-bar {
-  background-color: rgb(254, 141, 75);
-  height: 70px;
+  background-color: #363636;
+  height: 130px;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .nav-bar h1 {
   margin-left: 100px;
+  color: #dadada;
+  font-size: 40px;
+  letter-spacing: 4px;
 }

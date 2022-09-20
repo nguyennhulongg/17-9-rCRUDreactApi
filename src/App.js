@@ -1,34 +1,40 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import productApi from './api/productApi';
+import friendApi from './api/friendApi';
 import './App.css';
-import AddProduct from './components/AddProduct';
+import AddFriend from './components/AddFriend';
 import Header from './components/Header';
 
 
 function App() {
-  const [productList, setProductList] = useState([]);
+  const [friendList, setFriendList] = useState([]);
 
   useEffect(() => {
-    const fetchProductList = async () => {
+    const fetchFriendList = async () => {
       try {
-        const response = await productApi.getAll();
-        setProductList(response);
+        const response = await friendApi.getAll();
+        setFriendList(response);
       } catch(errors) {
         console.log(errors);
       }
     }
 
-    fetchProductList();
+    fetchFriendList();
   }, []);
 
   return (
     <div className="App">
       <div className='nav-bar'>
-        <h1>amezon</h1>
+        <h1>friends</h1>
       </div>
-      <AddProduct productList={productList} setProductList= { setProductList }/>
-      <Header productList = {productList} setProductList= { setProductList }/>
+      <div className='container'>
+        <AddFriend 
+          friendList={friendList}  
+          setFriendList= { setFriendList }/>
+        <Header 
+          friendList = {friendList} 
+          setFriendList= { setFriendList }/>
+      </div>
     </div>
   );
 }
