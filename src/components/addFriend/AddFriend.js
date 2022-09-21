@@ -44,14 +44,14 @@ const AddFriend = (props) => {
         console.log(errors);
       }
     }
-
+    document.querySelector('.create-friend').reset();
     fetchFriendList();
   }
 
   return (
     <div className="add-friend">
       <h2>Create a new friend</h2>
-      <form action="">
+      <form className="create-friend" action="">
         <label>Name:</label>
         <input className="new-friend-name" type="text" onChange={newFriendName} placeholder="Enter friend's name"/>
         <div className="avatar">

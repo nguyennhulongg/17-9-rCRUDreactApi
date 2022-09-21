@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import friendApi from './api/friendApi';
 import './App.css';
-import AddFriend from './components/AddFriend';
-import Header from './components/Header';
+import AddFriend from './components/addFriend/AddFriend';
+import Header from './components/header/Header';
 
 
 function App() {
